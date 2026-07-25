@@ -4,14 +4,14 @@ class Solution:
         right = max(piles)
 
         while left <= right:
-            i = (left + right) // 2
+            k = (left + right) // 2
 
             time = 0
             for p in piles:
-                time += (p + i - 1) // i
+                time += (p + k - 1) // k
             if time <= h:
-                res = i
-                right = i - 1
+                res = k
+                right = k - 1
             else:
-                left = i + 1
+                left = k + 1
         return res
